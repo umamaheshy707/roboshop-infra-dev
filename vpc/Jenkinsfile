@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Init') {
+            steps {
+                sh """
+                    cd vpc
+                    terraform init -reconfigure
+                """
+            }
+        }
+    }
+}

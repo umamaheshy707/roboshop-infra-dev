@@ -1,10 +1,14 @@
-pipeline{
-    agent{
-        any
-    }
-    options {
-        ansiColor('xterm')
-        // timeout(time: 1, unit: 'HOURS')
-        // disableConcurrentBuilds()
+pipeline {
+    agent any
+    
+    stages {
+        stage('Init') {
+            steps {
+                sh """
+                    cd vpc
+                    terraform init -reconfigure
+                """
+            }
+        }
     }
 }
