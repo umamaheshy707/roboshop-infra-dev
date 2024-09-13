@@ -1,0 +1,10 @@
+pipeline{
+    agent{
+        any
+    }
+    options {
+        ansiColor('xterm')
+        // timeout(time: 1, unit: 'HOURS')
+        // disableConcurrentBuilds()
+    }
+}
